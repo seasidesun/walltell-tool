@@ -18,6 +18,7 @@
   "homepage": "https://github.com/seasidesun/walltell-tool#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "hbs": "^4.0.1",
     "morgan": "^1.7.0"
   }
 }
