@@ -1,10 +1,11 @@
 body {
-    background-color: #efefef;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1000px;
     padding: 0 20px 0 20px;
     margin-left: auto;
     margin-right: auto;
+
+    background-color: #fff;
 }
 
 .head-bg {
@@ -12,7 +13,8 @@ body {
     left: 0;
     right: 0;
     height: 60px;
-    background-color: #1d1d1d;
+    /*background-color: #1d1d1d;*/
+    background-color: #352b26;
 }
 
 .head-wrapper {
@@ -22,16 +24,33 @@ body {
 
 .logo {
     position: relative;
-    display: block;
+    display: inline-block;
     height: 50%;
     top: 25%;
 }
 
-@media screen and (max-width: 400px) {
-
+.foot-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ededed;
+    text-align: center;
+    color: #bfbfbf;
+    padding: 10px;
+    font-size: 12px;
 }
 
-.card-shadow {
+@media screen and (max-width: 450px) {
+    .foot-wrapper {
+        display: none;
+    }
+    .head-wrapper {
+        text-align: center;
+    }
+}
+
+/*.card-shadow {
     border-radius: 10px;
     box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
-}
+}*/

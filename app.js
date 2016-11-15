@@ -6,7 +6,8 @@ var fs      = require('fs'),
 // 第三方库依赖
 var express = require('express'),
     logger  = require('morgan'),
-    hbs     = require('hbs');
+    hbs     = require('hbs'),
+    favicon = require('serve-favicon');
 // 自身依赖
 var router  = require('./router'),
 	config  = require('./config');
@@ -18,6 +19,7 @@ app.use(logger('dev'));
 
 // static file
 app.use(express.static(path.join(__dirname, 'public'), {maxAge: 86400000}));
+app.use(favicon(__dirname + '/favicon.ico'));
 
 // vies engine
 app.set('view engine', 'hbs');
