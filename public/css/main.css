@@ -1,7 +1,6 @@
 body {
     width: 100%;
     max-width: 1000px;
-    padding: 0 20px 0 20px;
     margin-left: auto;
     margin-right: auto;
 
@@ -20,13 +19,14 @@ body {
 .head-wrapper {
     height: 60px;
     margin-bottom: 40px;
+    padding: 0 20px 0 20px;
 }
 
 .logo {
     position: relative;
     display: inline-block;
-    height: 50%;
-    top: 25%;
+    height: 70%;
+    top: 15%;
 }
 
 .foot-wrapper {
@@ -34,7 +34,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ededed;
+    background-color: #352b26;
     text-align: center;
     color: #bfbfbf;
     padding: 10px;
