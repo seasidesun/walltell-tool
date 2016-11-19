@@ -11,6 +11,7 @@
       </ul>
       <br>
       <table class="table table-striped">
+      <tbody>
           <tr>
             <th class="col-md-2"></th>
             <th class="col-md-8">123</th>
@@ -31,6 +32,7 @@
           <td class="col-md-2">16小</td>
           <td class="col-md-8">ac59075b964b0715</td>
         </tr>
+      </tbody>
       </table>
       <br><br><br><br><br><br><br><br>
       </div>
@@ -49,30 +51,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
