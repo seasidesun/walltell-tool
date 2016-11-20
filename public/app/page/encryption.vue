@@ -2,19 +2,18 @@
   <div id="app">
       <div class="container wrapper card-shadow">
           <br>
-          <textarea class="form-control" draggable="false" autofocus placeholder="input"></textarea>
+          <textarea class="form-control" draggable="false" autofocus placeholder="input" v-model="inputStr"></textarea>
           <br>
         <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#">MD5</a></li>
-        <li role="presentation"><a href="#">SHA1</a></li>
-        <button type="button" class="btn btn-success pull-right">加密</button>
+            <li v-for="item in encryptType" :class="{active: nowEncrypt==item.id}" @click="nowEncrypt=item.id"><a href="#" >{{item.name}}</a></li>
+        <button type="button" class="btn btn-success pull-right" @click="encrypt">加密</button>
       </ul>
       <br>
       <table class="table table-striped">
       <tbody>
           <tr>
             <th class="col-md-2"></th>
-            <th class="col-md-8">123</th>
+            <th class="col-md-8">{{inputStr}}</th>
           </tr>
         <tr>
           <td class="col-md-2">32大</td>
@@ -40,13 +39,25 @@
 </template>
 
 <script>
+import MD5 from '../../lib/md5.min.js'
+
 export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+    name: 'app',
+    data () {
+        return {
+            encryptType: [
+                {name: 'MD5', id: '1'},
+                {name: 'SHA1', id: '2'}
+            ],
+            nowEncrypt: 1,
+            inputStr: '123'
+        }
+    },
+    methods: {
+        encrypt: () => {
+            console.log(MD5(this.inputStr));
+        }
     }
-  }
 }
 </script>
 

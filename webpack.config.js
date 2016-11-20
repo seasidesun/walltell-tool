@@ -2,7 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './public/js/encryption.js',
+  entry: './public/app/js/encryption.js',
   output: {
     path: path.resolve(__dirname, './public/dist'),
     publicPath: '/public/',
