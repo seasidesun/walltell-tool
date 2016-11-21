@@ -12,25 +12,13 @@
       <table class="table table-striped">
       <tbody>
           <tr>
-            <th class="col-md-2"></th>
-            <th class="col-md-8">{{inputStr}}</th>
+              <th class="col-md-2">源</th>
+              <th class="col-md-8">{{inputStr}}</th>
           </tr>
-        <tr>
-          <td class="col-md-2">32大</td>
-          <td class="col-md-8">202cb962ac59075b964b07152d234b70</td>
-        </tr>
-        <tr>
-          <td class="col-md-2">32小</td>
-          <td class="col-md-8">202cb962ac59075b964b07152d234b70</td>
-        </tr>
-        <tr>
-          <td class="col-md-2">16大</td>
-          <td class="col-md-8">ac59075b964b0715</td>
-        </tr>
-        <tr>
-          <td class="col-md-2">16小</td>
-          <td class="col-md-8">ac59075b964b0715</td>
-        </tr>
+          <tr v-for="item in result">
+              <td class="col-md-2">{{item.name}}</td>
+              <td class="col-md-8">{{item.value}}</td>
+          </tr>
       </tbody>
       </table>
       <br><br><br><br><br><br><br><br>
@@ -50,12 +38,28 @@ export default {
                 {name: 'SHA1', id: '2'}
             ],
             nowEncrypt: 1,
-            inputStr: '123'
+            inputStr: '123',
+            result: []
         }
     },
     methods: {
         encrypt: () => {
-            console.log(MD5(this.inputStr));
+            if (!this.inputStr) return;
+
+            if (this.nowEncrypt === 1) {
+                var value = MD5(this.inputStr);
+                this.handlerMD5(value);
+            }
+        },
+        handlerMD5: (value) => {
+            if (!value) return;
+
+            this.result = [
+                {name: '16小写', value: value},
+                {name: '16大写', value: value.toUpperCase()},
+                {name: '8小写', value: value.substr(8, 8)},
+                {name: '8大写', value: value.substr(8, 8).toUpperCase()}
+            ];
         }
     }
 }
