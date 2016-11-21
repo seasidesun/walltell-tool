@@ -34,8 +34,8 @@ export default {
     data () {
         return {
             encryptType: [
-                {name: 'MD5', id: '1'},
-                {name: 'SHA1', id: '2'}
+                {name: 'MD5', id: 1},
+                {name: 'SHA1', id: 2}
             ],
             nowEncrypt: 1,
             inputStr: '123',
