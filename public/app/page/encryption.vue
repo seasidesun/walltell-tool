@@ -34,8 +34,8 @@ export default {
     data () {
         return {
             encryptType: [
-                {name: 'MD5', id: 1},
-                {name: 'SHA1', id: 2}
+                {name: 'MD5', id: 1}
+                // {name: 'SHA1', id: 2}
             ],
             nowEncrypt: 1,
             inputStr: '123',
@@ -43,7 +43,7 @@ export default {
         }
     },
     methods: {
-        encrypt: () => {
+        encrypt: function () {
             if (!this.inputStr) return;
 
             if (this.nowEncrypt === 1) {
@@ -51,14 +51,14 @@ export default {
                 this.handlerMD5(value);
             }
         },
-        handlerMD5: (value) => {
+        handlerMD5: function (value) {
             if (!value) return;
 
             this.result = [
-                {name: '16小写', value: value},
-                {name: '16大写', value: value.toUpperCase()},
-                {name: '8小写', value: value.substr(8, 8)},
-                {name: '8大写', value: value.substr(8, 8).toUpperCase()}
+                {name: '32小写', value: value},
+                {name: '32大写', value: value.toUpperCase()},
+                {name: '16小写', value: value.substr(8, 16)},
+                {name: '16大写', value: value.substr(8, 16).toUpperCase()}
             ];
         }
     }
